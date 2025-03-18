@@ -2,9 +2,9 @@
 
 This repository contains the source code for my Master's Thesis project titled **"Design of a Machine Learning Model for Sentiment Analysis in Financial News."** The project addresses two main challenges:
 1. **Extraction of the Main Economic Subject (POE):** Automatically identifying the principal economic entity in a financial news headline.
-2. **Sentiment Analysis:** Determining the sentiment (positive, neutral, or negative) toward the POE as well as toward companies and consumers.
+2. **Sentiment Analysis:** Determining the sentiment (positive, neutral, or negative) expressed in the headline toward the POE, as well as toward companies and consumers.
 
-The project combines traditional NLP techniques (using NLTK and spaCy), classical machine learning models (e.g., Random Forest), and large language models (LLMs) such as OpenAI's GPT-3, as well as hybrid approaches (e.g., spaCy + BERT).
+The project combines traditional NLP techniques (using NLTK and spaCy), classical machine learning models (e.g., Random Forest), large language models (LLMs) such as OpenAI's GPT-3, and hybrid approaches (e.g., spaCy + BERT).
 
 ## Project Overview
 
@@ -20,8 +20,8 @@ Financial news and social media data are increasingly used to predict stock mark
 ### Methodology
 The project follows the CRISP-DM methodology, which includes:
 - Business understanding and data comprehension
-- Data preparation and preprocessing (using classical NLP libraries and transformers)
-- Model building using various approaches (NLTK, spaCy, OpenAI, spaCy+BERT, and a hybrid approach)
+- Data preparation and preprocessing (using classical NLP libraries and transformer-based models)
+- Model building using various approaches (NLTK, spaCy, OpenAI, spaCy+BERT, and hybrid methods)
 - Evaluation using metrics such as accuracy and weighted F1-score, along with confusion matrices for detailed error analysis
 - Analysis of feature importances and model explainability using tools like LIME
 
@@ -48,19 +48,15 @@ The repository (located at [https://github.com/runciter2078/tfm](https://github.
   Combines spaCy for text preprocessing with a pre-trained BERT model (using the `nlptown/bert-base-multilingual-uncased-sentiment` pipeline) to predict sentiment for the POE, providing a deeper contextual analysis.
 
 - **Additional Scripts:**  
-  The repository also contains several scripts for explainability (using LIME) and for model evaluation and feature importance extraction.
+  The repository also contains scripts for explainability (using LIME) and for model evaluation and feature importance extraction.
 
 ## Data
 
-The scripts assume that the following datasets are available in CSV format:
-- `FinancES_phase_2_train_public.csv` (for sentiment analysis tasks)
-- `SPYV3.csv` (for financial news data)
-
-More details about the dataset and annotations can be found in the thesis document.
+The scripts use the dataset provided by the competition **"IBERLEF 2023 Task - FinancES: Financial Targeted Sentiment Analysis in Spanish"**, which is available in CSV format (e.g., `FinancES_phase_2_train_public.csv`). More details about the dataset and annotations can be found in the thesis document.
 
 ## Thesis Document
 
-The full thesis document is available as a PDF named **TFM_Financial_Sentiment_Analysis.pdf** in the repository. It includes detailed information on the methodology, experiments, results, and future work.
+The complete Master's Thesis document is available as a PDF named **TFM_Financial_Sentiment_Analysis.pdf** in the repository. It includes detailed information on the methodology, experiments, results, and future work.
 
 ## Requirements
 
