@@ -74,7 +74,7 @@ python -m spacy download es_core_news_sm
 ## Installation and Setup
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/runciter2078/tfm.git
+   git clone https://github.com/runciter2078/FinNewsSentiment
    ```
 2. **Navigate to the project directory:**
    ```bash
