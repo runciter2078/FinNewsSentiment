@@ -27,7 +27,7 @@ The project follows the CRISP-DM methodology, which includes:
 
 ## Repository Structure
 
-The repository (located at [https://github.com/runciter2078/tfm](https://github.com/runciter2078/tfm)) contains the following scripts:
+The repository (located at [https://github.com/runciter2078/FinNewsSentiment](https://github.com/runciter2078/FinNewsSentiment)) contains the following scripts:
 
 - **explaning_lime.py**  
   Provides an example of model explainability using LIME. It demonstrates how to generate and display textual explanations for model predictions.
@@ -84,11 +84,11 @@ python -m spacy download es_core_news_sm
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/runciter2078/tfm.git
+   git clone https://github.com/runciter2078/FinNewsSentiment.git
    ```
 2. **Navigate to the project directory:**
    ```bash
-   cd tfm
+   cd FinNewsSentiment
    ```
 3. **Install the required dependencies:**
    ```bash
