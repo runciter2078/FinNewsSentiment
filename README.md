@@ -1,132 +1,85 @@
 # Financial Sentiment Analysis for News Headlines
 
-This repository contains the source code for my Master's Thesis project titled **"Design of a Machine Learning Model for Sentiment Analysis in Financial News."** The project addresses two main challenges:
-1. **Extraction of the Main Economic Subject (POE):** Automatically identifying the principal economic entity in a financial news headline.
-2. **Sentiment Analysis:** Determining the sentiment (positive, neutral, or negative) expressed in the headline toward the POE, as well as toward companies and consumers.
+This repository contains a collection of scripts developed for the Master's Thesis project titled **"Design of a Machine Learning Model for Sentiment Analysis in Financial News."** The project focuses on analyzing financial news headlines by addressing two key tasks:
 
-The project combines traditional NLP techniques (using NLTK and spaCy), classical machine learning models (e.g., Random Forest), large language models (LLMs) such as OpenAI's GPT-3, and hybrid approaches (e.g., spaCy + BERT).
+- **Main Economic Subject Extraction:** Automatically identifying the principal economic entity in each headline.
+- **Targeted Sentiment Analysis:** Classifying the sentiment (positive, neutral, or negative) expressed in the headline toward the main economic subject, as well as toward companies and consumers.
 
-## Project Overview
+The project combines traditional NLP techniques (using NLTK and spaCy), classical machine learning models (such as Random Forest), and state-of-the-art language models (including OpenAI's GPT-3 and transformer-based approaches). In addition, hybrid methods (e.g., spaCy + BERT) are explored to enhance performance.
 
-Financial news and social media data are increasingly used to predict stock market trends. Given the complexity of financial language and the context-dependent nature of sentiment, this work explores different models and preprocessing techniques to achieve robust sentiment analysis from financial headlines.
+The scripts in this repository have been developed with clarity and modularity in mind, featuring proper documentation, improved preprocessing, evaluation, and explainability routines (using LIME).  
+ 
+**Note:** This work is part of my Master's Thesis (TFM), documented in detail in the thesis file **TFM_Financial_Sentiment_Analysis.pdf**.
 
-### Key Objectives
-- **Main Economic Subject Extraction:** Automatically identify the principal economic subject (POE) in each headline.
-- **Targeted Sentiment Analysis:** Classify the sentiment expressed in headlines toward:
-  - The POE
-  - Companies
-  - Consumers
-
-### Methodology
-The project follows the CRISP-DM methodology, which includes:
-- Business understanding and data comprehension
-- Data preparation and preprocessing (using classical NLP libraries and transformer-based models)
-- Model building using various approaches (NLTK, spaCy, OpenAI, spaCy+BERT, and hybrid methods)
-- Evaluation using metrics such as accuracy and weighted F1-score, along with confusion matrices for detailed error analysis
-- Analysis of feature importances and model explainability using tools like LIME
+---
 
 ## Repository Structure
 
-The repository (located at [https://github.com/runciter2078/FinNewsSentiment](https://github.com/runciter2078/FinNewsSentiment)) contains the following scripts:
+```
+FinNewsSentiment/
+├── explaning_lime.py       # Script demonstrating model explainability using LIME
+├── model_hybrid.py         # Hybrid model combining OpenAI's GPT-3 for POE extraction and Random Forest for sentiment analysis
+├── model_nltk.py           # NLTK-based preprocessing and Random Forest classifier for sentiment analysis
+├── model_openai.py         # Script using the OpenAI API (GPT-3) for economic subject extraction and sentiment analysis
+├── model_spacy.py          # spaCy-based pipeline with TF-IDF features and Random Forest classifier
+├── model_spacy_bert.py     # Hybrid approach combining spaCy for preprocessing with a BERT sentiment classifier
+├── README.md               # This file
+├── requirements.txt        # List of required Python dependencies
+└── TFM_Financial_Sentiment_Analysis.pdf  # Complete thesis document
+```
 
-- **explaning_lime.py**  
-  Provides an example of model explainability using LIME. It demonstrates how to generate and display textual explanations for model predictions.
-
-- **model_hybrid.py**  
-  Implements a hybrid model that combines OpenAI's GPT-3 for POE extraction and sentiment analysis on financial headlines with traditional machine learning (Random Forest) for classifying sentiment toward companies and consumers.
-
-- **model_nltk.py**  
-  Uses NLTK for text preprocessing and feature extraction. It extracts the main economic subject using frequency-based methods and builds classifiers (Random Forest) for sentiment analysis across different economic entities.
-
-- **model_openai.py**  
-  Uses the OpenAI API (GPT-3) to extract the POE from headlines and perform sentiment analysis. Given API costs, the script operates on a sample (e.g., 5% of the data) for demonstration purposes.
-
-- **model_spacy.py**  
-  Utilizes spaCy for preprocessing and builds a Random Forest classifier pipeline with TF-IDF features. It evaluates sentiment classification performance for the target, companies, and consumers.
-
-- **model_spacy_bert.py**  
-  Combines spaCy for text preprocessing with a pre-trained BERT model (using the `nlptown/bert-base-multilingual-uncased-sentiment` pipeline) to predict sentiment for the POE, providing a deeper contextual analysis.
-
-- **Additional Scripts:**  
-  The repository also contains scripts for explainability (using LIME) and for model evaluation and feature importance extraction.
-
-## Data
-
-The scripts use the dataset provided by the competition **"IBERLEF 2023 Task - FinancES: Financial Targeted Sentiment Analysis in Spanish"**, which is available in CSV format (e.g., `FinancES_phase_2_train_public.csv`). More details about the dataset and annotations can be found in the thesis document.
-
-## Thesis Document
-
-The complete Master's Thesis document is available as a PDF named **TFM_Financial_Sentiment_Analysis.pdf** in the repository. It includes detailed information on the methodology, experiments, results, and future work.
+---
 
 ## Requirements
 
-- Python 3.6 or higher
-- Required Python packages:
-  - pandas
-  - numpy
-  - scikit-learn
-  - scipy
-  - matplotlib
-  - seaborn
-  - nltk
-  - spacy
-  - transformers
-  - lime
-  - python-docx
-  - (and others as needed)
+- **Python:** 3.8 or above (Python 3.10+ recommended)
+- **Required Packages:**  
+  Install via pip:
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-Make sure to install the Spanish language model for spaCy:
+*Additional note:* Ensure you have installed the Spanish language model for spaCy:
 ```bash
 python -m spacy download es_core_news_sm
 ```
+
+---
 
 ## Installation and Setup
 
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/runciter2078/FinNewsSentiment.git
-   ```
-2. **Navigate to the project directory:**
-   ```bash
    cd FinNewsSentiment
    ```
-3. **Install the required dependencies:**
+2. **Install the required dependencies:**
    ```bash
    pip install -r requirements.txt
    ```
-   *(If a requirements file is not provided, install manually the packages listed above.)*
+3. **Configure API Keys and Data:**
+   - Configure your OpenAI API key as needed inside the scripts.
+   - The dataset used is provided in the CSV file `FinancES_phase_2_train_public.csv` (or adjust the path if es necesario).
+4. **Run the scripts:**
+   Each script is self-contained and can be executed independently. For example:
+   - To run the LIME explanation example:
+     ```bash
+     python explaning_lime.py
+     ```
+   - To run the hybrid model:
+     ```bash
+     python model_hybrid.py
+     ```
+   - And so on.
 
-## How to Run the Scripts
-
-Each script is self-contained and addresses a specific part of the project. For example:
-
-- **To run the LIME explanation example:**
-  ```bash
-  python explaning_lime.py
-  ```
-- **To run the hybrid model:**
-  ```bash
-  python model_hybrid.py
-  ```
-- **To run the NLTK-based model:**
-  ```bash
-  python model_nltk.py
-  ```
-- **To run the OpenAI-based model:**
-  ```bash
-  python model_openai.py
-  ```
-- **To run the spaCy-based model:**
-  ```bash
-  python model_spacy.py
-  ```
-- **To run the spaCy+BERT model:**
-  ```bash
-  python model_spacy_bert.py
-  ```
-
-Adjust file paths and API keys as necessary in the scripts.
+---
 
 ## License
 
 This project is distributed under the [MIT License](LICENSE).
+
+---
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests with improvements or bug fixes.
