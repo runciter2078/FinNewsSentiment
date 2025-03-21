@@ -31,7 +31,7 @@ FinNewsSentiment/
 ## Requirements
 
 - **Python:** 3.8 or above (Python 3.10+ recommended)
-- **Dataset:** The project uses the CSV file `FinancES_phase_2_train_public.csv` (adjust the path as needed).
+- **Dataset:** The project uses the CSV file `FinancES_phase_2_train_public.csv` (https://codalab.lisn.upsaclay.fr/competitions/10052).
 - **Required Python Packages:**  
   Install via pip:
   ```bash
