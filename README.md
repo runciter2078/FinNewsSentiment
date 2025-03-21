@@ -1,5 +1,7 @@
 # Financial Sentiment Analysis for News Headlines
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 This repository contains a collection of scripts for building a machine learning pipeline that analyzes sentiment in financial news headlines. The project focuses on two key tasks:
 
 - **Main Economic Subject Extraction:** Automatically identifying the principal economic entity in each headline.
