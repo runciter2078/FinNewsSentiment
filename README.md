@@ -7,7 +7,7 @@ This repository contains a collection of scripts for building a machine learning
 
 The project integrates traditional NLP techniques (using NLTK and spaCy), classical machine learning models (such as Random Forest), and state-of-the-art language models (including OpenAI's GPT-3 and transformer-based approaches). In addition, hybrid methods (e.g., spaCy + BERT) are explored to enhance performance. The scripts are organized in a modular fashion with clear documentation, robust preprocessing, evaluation metrics, and model explainability routines (using LIME).
 
-**Note:** This work was developed as part of my Master's Thesis (TFM) for the VIU Big Data & Data Science program. Detailed documentation of the thesis is available in the file **TFM_Financial_Sentiment_Analysis.pdf**.
+**Note:** This work was developed as part of my Master's Thesis (TFM) for the VIU (Universidad Internacional de Valencia) Big Data & Data Science program. Detailed documentation of the thesis is available in the file **TFM_Financial_Sentiment_Analysis.pdf**.
 
 ---
 
