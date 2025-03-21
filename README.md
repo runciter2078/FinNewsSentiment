@@ -31,7 +31,7 @@ FinNewsSentiment/
 ## Requirements
 
 - **Python:** 3.8 or above (Python 3.10+ recommended)
-- **Dataset:** The project uses the CSV file `FinancES_phase_2_train_public.csv` (https://codalab.lisn.upsaclay.fr/competitions/10052).
+- **Dataset:** The project uses the CSV file `[FinancES_phase_2_train_public.csv](https://codalab.lisn.upsaclay.fr/competitions/10052#learn_the_details-get_starting_kit)` (https://codalab.lisn.upsaclay.fr/competitions/10052).
 - **Required Python Packages:**  
   Install via pip:
   ```bash
@@ -58,7 +58,7 @@ python -m spacy download es_core_news_sm
    ```
 3. **Configure API Keys and Data:**
    - Update the OpenAI API key within the scripts where needed.
-   - Place the dataset CSV file (`FinancES_phase_2_train_public.csv`) in the repository folder or adjust the file path accordingly.
+   - Place the dataset CSV file (`[FinancES_phase_2_train_public.csv](https://codalab.lisn.upsaclay.fr/competitions/10052#learn_the_details-get_starting_kit)`) in the repository folder or adjust the file path accordingly.
 4. **Optional: Prepare a Virtual Environment:**
    ```bash
    python -m venv venv
